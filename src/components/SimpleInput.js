@@ -7,13 +7,15 @@ const SimpleInput = props => {
 		setEnteredName(event.target.value);
 	};
 
-  const formSubmissionHandler = event =>{
-    event.preventDefault();
-    console.log(enteredName)
+	const formSubmissionHandler = event => {
+		event.preventDefault();
+		if (enteredName.trim() === "") {
+			return;
+		}
+		console.log(enteredName);
 
-
-    setEnteredName('')
-  };
+		setEnteredName("");
+	};
 
 	return (
 		<form onSubmit={formSubmissionHandler}>
